@@ -1,0 +1,207 @@
+:root{
+    --secondary-grey-300: rgba(244, 247, 254, 1);
+    --aside-color: linear-gradient(149.96deg, #301F81 12.51%, #0F0441 89.53%);
+    --secondary-grey-700: rgba(112, 126, 174, 1);
+    --employees-color: rgba(43, 54, 116, 1);
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.layout{
+    display: flex;
+    height: 100%;
+    background-color: var(--secondary-grey-300);
+}
+.main-div-left{
+    /* margin-top: 20px; */
+    padding-top: 1px;
+    /* border-top: 1px solid transparent; */
+    height: 100%;
+    width: 20%;
+    background: var(--aside-color);
+}
+.main-div-left-heading-top{
+    font-family: "poppins";
+    color: white;
+    font-weight: 700;
+    font-size: 23px;
+    margin-left: 10%;
+    /* padding-top: 15%; */
+    margin-top: 15%;
+}
+.main-div-left-heading-bottom{
+    font-weight: lighter;
+}
+.hr-tag-1{
+    opacity: 0.1;
+}
+.ul-tag-1{
+    list-style-type: none;
+    padding: 0 10%;
+}
+.list-element{
+    opacity: 0.5;
+    padding: 15px 5px;
+    width: 235px;
+}
+.list-element:hover{
+    background-color: rgba(225,225,225,0.3);
+    border-radius: 15px;
+}
+.list-button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+}
+.dm-sans-500-small {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: small;
+}
+.dm-sans-500-normal{
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.dm-sans-500-medium{
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: medium;
+}
+.dm-sans-700-normal-size-small-style {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: normal;
+}
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+.main-content{
+    width: 100%;
+}
+.breadcrumb-item a{
+    text-decoration: none;
+    color: var(--secondary-grey-700);
+}
+.employees{
+    color: var(--employees-color);
+}
+.main-content-top-div{
+    background-color: aqua;
+}
