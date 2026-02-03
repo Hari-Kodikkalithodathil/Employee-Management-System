@@ -1,61 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="layout">
         <aside class="main-div-left">
             <h3 class="main-div-left-heading-top">Employee <br>
-                <span class="main-div-left-heading-bottom poppins-light">Management</span></h3>
-                <hr class="hr-tag-1">
-                <ul class="ul-tag-1">
-                    <li class="list-element">
-                        <button class="list-button dm-sans-500">
-                            <i class="fa-solid fa-house" style="color: #ffffff;"></i>Dashboard
-                        </button>
-                    </li>
-                    <li class="list-element">
-                        <button class="list-button dm-sans-500">
-                            <i class="fa-solid fa-chart-column" style="color: #ffffff;"></i>Employees
-                        </button>
-                    </li>
-                    <li class="list-element">
-                        <button class="list-button dm-sans-500" style="color: #ffffff;">
-                            <i class="fa-solid fa-user"></i>My Profile
-                        </button>
-                    </li>
-                    <li class="list-element">
-                        <button class="list-button dm-sans-500">
-                            <i class="fa-solid fa-lock" style="color: #ffffff;"></i>Logout
-                        </button>
-                    </li>
-                </ul>
-            </aside>
-            <main class="main-content">
-                <div class="main-content-top-div">
+                <span class="main-div-left-heading-bottom poppins-light">Management</span>
+            </h3>
+            <hr class="hr-tag-1">
+            <ul class="ul-tag-1">
+                <li class="list-element">
+                    <button class="list-button dm-sans-500">
+                        <i class="fa-solid fa-house" style="color: #ffffff;"></i>Dashboard
+                    </button>
+                </li>
+                <li class="list-element">
+                    <button class="list-button dm-sans-500">
+                        <i class="fa-solid fa-chart-column" style="color: #ffffff;"></i>Employees
+                    </button>
+                </li>
+                <li class="list-element">
+                    <button class="list-button dm-sans-500" style="color: #ffffff;">
+                        <i class="fa-solid fa-user"></i>My Profile
+                    </button>
+                </li>
+                <li class="list-element">
+                    <button class="list-button dm-sans-500">
+                        <i class="fa-solid fa-lock" style="color: #ffffff;"></i>Logout
+                    </button>
+                </li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="main-content-top-div">
+                <div>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item dm-sans-500-medium"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item dm-sans-500-medium"><a href="#">Employees</a></li>  
+                            <li class="breadcrumb-item dm-sans-500-medium"><a href="#">Employees</a></li>
                         </ol>
                     </nav>
                     <h3 class="dm-sans-700-normal-size-small-style employees">Employees</h3>
-                </main>
+                </div>
+                <div class="search-bar">
+                    <nav class="navbar bg-light px-3">
+                        <form class="d-flex ms-auto" role="search">
+                            <div class="search-box">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="search" class="form-control search-input" placeholder="Search">
+                            </div>
+                            <i class="fa-regular fa-bell fa-1x ps-2 bell-icon"></i>
+                        </form>
+                    </nav>
+                </div>
             </div>
-        </div>
+            <div class="div-for-table">
+                <div class="div-for-table-top-div">
+                    <h4 class="dm-sans-700-normal-size-small-style">Employees List</h4>
+                    <div class="pagination-box">
+                        <select class="form-select page-select">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                        <span class="page-total">of 10</span>
+                    </div>
+                    <button type="button" class="btn btn-primary add-employee-button" data-toggle="modal"
+                        data-target="#exampleModalLong">Add Employee</button>
+                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content" >
+                                <div class="modal-header">
+                                    <h5 class="modal-title dm-sans-700-normal-size-small-style"
+                                        id="exampleModalLongTitle">Add Employee</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="image-input-field d-flex justify-content-center pt-4 pb-4">
+                                        <label for="image-input" class="input-field">
+                                            <div class="image-upload-holder d-flex flex-column align-items-center">
+                                                <div class="upload-icon"><i
+                                                        class="fa-solid fa-upload fa-2x upload-icon-font-awesome"></i>
+                                                </div>
+                                                <div class="upload-text dm-sans-700">Upload Image</div>
+                                                <div class="upload-format dm-sans-500">PNG, JPG files are allowed</div>
+                                            </div>
+                                        </label>
+                                        <input type="file" id="image-input" class="d-none">
+                                    </div>
+                                    <div class="container-fluid salutaion-and-name mt-3">
+                                        <div class="row">
+                                            <div class="col-3 col-bg-1">
+                                                <label for=""
+                                                    class="form-label dm-sans-500 form-text">Salutation</label>
+                                                <span class="red-star"> * </span>
+                                                <select class="form-select salutation"
+                                                    aria-label="Default select example" required>
+                                                    <option selected>Select</option>
+                                                    <option value="1">Mr.</option>
+                                                    <option value="2">Mrs.</option>
+                                                    <option value="3">Ms.</option>
+                                                    <option value="4">Dr.</option>
+                                                </select>
+                                            </div>
+                                            <div class="col col-bg-1">
+                                                <label for="" class="form-label dm-sans-500 form-text">First
+                                                    Name</label>
+                                                <span class="red-star"> * </span>
+                                                <input class="form-control" type="text" placeholder="john">
+                                            </div>
+                                            <div class="col col-bg-1">
+                                                <label for="" class="form-label dm-sans-500 form-text">Last Name</label>
+                                                <span class="red-star"> * </span>
+                                                <input class="form-control" type="text" placeholder="doe">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="table-row-heading dm-sans-500-normal table-row-heading-sl">Sl.No</th>
+                            <th class="table-row-heading dm-sans-500-normal table-row-heading-name">Name</th>
+                            <th class="table-row-heading dm-sans-500-normal table-row-heading-email">Email</th>
+                            <th class="table-row-heading dm-sans-500-normal table-row-heading-phone">Phone</th>
+                            <th class="table-row-heading dm-sans-500-normal table-row-heading-gender">Gender</th>
+                            <th class="table-row-heading dm-sans-500-normal table-row-heading-dob">DOB</th>
+                            <th class="table-row-heading dm-sans-500-normal table-row-heading-country">Country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>Hari K P</td>
+                            <td>hari.campnou@gmail.com</td>
+                            <td>8547846908</td>
+                            <td>Male</td>
+                            <td>24-02-1997</td>
+                            <td>India</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
 </body>
+
 </html>
