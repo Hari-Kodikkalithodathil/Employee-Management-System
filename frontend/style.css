@@ -9,6 +9,7 @@
     --table-border: rgba(211, 216, 226, 1);
     --table-row-heading: rgba(139, 149, 183, 1);
     --secondary-grey-500: rgba(143, 155, 186, 1);
+    --star-red: rgba(255, 24, 24, 1);
 }
 html, body{
     margin: 0;
@@ -305,6 +306,12 @@ html, body{
 .modal-content{
   width: 800px !important;
 }
+.form-text{
+  color: var(--employees-color) !important;
+}
+.red-star{
+  color: var(--star-red);
+}
 .image-input-field{
     border: 3px dashed var(--secondary-grey-700);
 }
@@ -357,7 +364,8 @@ td, th{
 .table-row-heading-dob{
   padding-right: 105px;
 } */
- .table-row-heading-sl{width: 50px;}
+.table-row-heading-sl{width: 50px;}
+.table-row-heading-avatar{width: 75px;}
 .table-row-heading-name{width: 215px;}
 .table-row-heading-email{width: 315px;}
 .table-row-heading-phone{width: 135px;}
@@ -365,3 +373,6 @@ td, th{
 .table-row-heading-dob{width: 120px;}
 .table-row-heading-country{width: 120px;}
 
+.pagination{
+  margin-top: 50px;
+}
