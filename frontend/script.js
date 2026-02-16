@@ -174,7 +174,20 @@ document.getElementById('adding-employee-btn').addEventListener("click", ()=>{
         state: document.getElementById('state').value,
         country: document.getElementById('country').value,
         pin: document.getElementById('pin').value,
+
+        username: "user",
+        password: "default123"
     }
+
+    fetch("http://localhost:3000/employees",{
+        method: "POST",
+        headers:{"Content-Type": "application/json"},
+        body:json.stringify(employeeData)
+    })
+    .then(response => response.json())
+    .then(data=>{
+        console.log(data)
+    })
 })
 
 getEmployees();
