@@ -8,11 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
@@ -30,7 +26,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -105,8 +101,8 @@
                         </select>
                         <span class="page-total">of 10</span>
                     </div> -->
-                    <button type="button" class="btn btn-primary add-employee-button" data-toggle="modal"
-                        data-target="#exampleModalLong">Add Employee</button>
+                    <button type="button" class="btn btn-primary add-employee-button" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalLong">Add Employee</button>
                     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -114,7 +110,8 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title dm-sans-700-normal-size-small-style"
                                         id="exampleModalLongTitle">Add Employee</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-icon">
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"
+                                        id="close-icon">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
@@ -129,7 +126,9 @@
                                                 <div class="upload-format dm-sans-500">PNG, JPG files are allowed</div>
                                             </div>
                                         </label>
-                                        <input type="file" id="image-input" class="d-none">
+                                        <!-- <input type="file" id="image-input" class="d-none"> -->
+                                        <input type="file" id="image-input" name="avatar" class="d-none">
+
                                     </div>
                                     <div class="container-fluid salutaion-and-name mt-3">
                                         <div class="row">
@@ -140,17 +139,18 @@
                                                 <select class="form-select salutation" id="salutation"
                                                     aria-label="Default select example" required>
                                                     <option selected>Select</option>
-                                                    <option value="1">Mr.</option>
-                                                    <option value="2">Mrs.</option>
-                                                    <option value="3">Ms.</option>
-                                                    <option value="4">Dr.</option>
+                                                    <option value="Mr">Mr.</option>
+                                                    <option value="Mrs">Mrs.</option>
+                                                    <option value="Ms">Ms.</option>
+                                                    <option value="Dr">Dr.</option>
                                                 </select>
                                             </div>
                                             <div class="col col-bg-1">
                                                 <label for="" class="form-label dm-sans-500 form-text">First
                                                     Name</label>
                                                 <span class="red-star"> * </span>
-                                                <input class="form-control" type="text" placeholder="john" id="firstname">
+                                                <input class="form-control" type="text" placeholder="john"
+                                                    id="firstname">
                                             </div>
                                             <div class="col col-bg-1">
                                                 <label for="" class="form-label dm-sans-500 form-text">Last Name</label>
@@ -192,16 +192,22 @@
                                                 <span class="red-star"> * </span>
                                                 <div class="d-flex">
                                                     <div class="form-check me-3">
+                                                        <!-- <input class="form-check-input" type="radio" name="gender"
+                                                            id="radio1" checked> -->
                                                         <input class="form-check-input" type="radio" name="gender"
-                                                            id="radio1" checked>
+                                                            value="Male" id="radio1" checked>
+
                                                         <label class="form-check-label dm-sans-400 form-text"
                                                             for="radio1">
                                                             Male
                                                         </label>
                                                     </div>
                                                     <div class="form-check">
+                                                        <!-- <input class="form-check-input" type="radio" name="gender"
+                                                            id="radio2"> -->
                                                         <input class="form-check-input" type="radio" name="gender"
-                                                            id="radio2">
+                                                            value="Female" id="radio2">
+
                                                         <label class="form-check-label dm-sans-400 form-text"
                                                             for="radio2">
                                                             Female
@@ -227,7 +233,8 @@
                                             <div class="col">
                                                 <label for="" class="form-label dm-sans-500 form-text">Address</label>
                                                 <span class="red-star"> * </span>
-                                                <input class="form-control" type="text" placeholder="enter address" id="address">
+                                                <input class="form-control" type="text" placeholder="enter address"
+                                                    id="address">
                                             </div>
                                         </div>
                                     </div>
@@ -236,21 +243,23 @@
                                             <div class="col">
                                                 <label for="" class="form-label dm-sans-500 form-text">Country</label>
                                                 <span class="red-star"> * </span>
-                                                <select class="form-select" aria-label="Default select example" id="country">
-                                                    <option selected class="dm-sans-400 form-text" value="">Country</option>
-                                                    <option value="1">India</option>
-                                                    <option value="2">Israel</option>
-                                                    <option value="3">Russia</option>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    id="country">
+                                                    <option selected class="dm-sans-400 form-text" value="">Country
+                                                    </option>
+                                                    <option value="India">India</option>
+                                                    <option value="Israel">Israel</option>
+                                                    <option value="Russia">Russia</option>
                                                 </select>
                                             </div>
                                             <div class="col">
                                                 <label for="" class="form-label dm-sans-500 form-text">State</label>
                                                 <span class="red-star"> * </span>
-                                                <select class="form-select" aria-label="Default select example" id="state">
-                                                    <option selected value="">State</option>
-                                                    <option value="1">Kerala</option>
-                                                    <option value="2">Tamil Nadu</option>
-                                                    <option value="3">Bihar</option>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    id="state">
+                                                    <option value="Kerala">Kerala</option>
+                                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                                    <option value="Bihar">Bihar</option>
                                                 </select>
                                             </div>
                                             <div class="container mt-3 mb-3">
@@ -277,8 +286,10 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel-btn">Close</button>
-                                    <button type="button" class="btn btn-primary" id="adding-employee-btn">Add Employee</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                        id="cancel-btn">Close</button>
+                                    <button type="button" class="btn btn-primary" id="adding-employee-btn">Add
+                                        Employee</button>
                                 </div>
                             </div>
                         </div>
@@ -318,16 +329,18 @@
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">View Profile</a></li>
-                                            <li><a class="dropdown-item" href="#" data-bs-target="#exampleModal" data-bs-toggle="modal">Edit</a></li>
+                                            <li><a class="dropdown-item" href="#" data-bs-target="#exampleModal"
+                                                    data-bs-toggle="modal">Edit</a></li>
                                             <li><a class="dropdown-item" href="#">Delete</a></li>
                                         </ul>
-                                        <!-- Modal -->
+                                        <!-- Modal for add Employee -->
                                         <div class="modal fade" id="exampleModal" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Employee
+                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit
+                                                            Employee
                                                         </h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
@@ -338,7 +351,8 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save
+                                                        <button type="button" class="btn btn-primary"
+                                                            data-bs-dismiss="modal">Save
                                                             changes</button>
                                                     </div>
                                                 </div>
@@ -350,10 +364,37 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <!-- Modal for View Details-->
+                <div class="modal fade" id="exampleModalForViewDetails" tabindex="-1"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Employee Details</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Modal for Edit Details-->
+                
+
+
                 <div id="pagination" class="pagination d-flex justify-content-end gap-3"></div>
             </div>
         </main>
     </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
