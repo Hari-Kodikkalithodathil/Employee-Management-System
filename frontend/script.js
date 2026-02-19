@@ -473,61 +473,147 @@ document.addEventListener("click", async function (e) {
 
 
 // Chatgpt - To open the edit modal
-// document.addEventListener("click", async function (e) {
+document.addEventListener("click", async function (e) {
 
-//     if (e.target.classList.contains("edit-btn")) {
-//         e.preventDefault();
+    if (e.target.classList.contains("edit-btn")) {
+        e.preventDefault();
 
-//         const employeeId = e.target.dataset.id;
+        const employeeId = e.target.dataset.id;
 
-//         try {
-//             const response = await fetch(`http://localhost:3000/employees/${employeeId}`);
+        try {
+            const response = await fetch(`http://localhost:3000/employees/${employeeId}`);
 
-//             if (!response.ok) {
-//                 throw new Error("Employee not found");
-//             }
+            if (!response.ok) {
+                throw new Error("Employee not found");
+            }
 
-//             const employee = await response.json();
+            const employee = await response.json();
 
             // Fill edit modal fields
-            // document.querySelector("#exampleModalForEdit #salutationEdit").value = employee.salutation;
-            // document.querySelector("#exampleModalForEdit #firstnameEdit").value = employee.firstName;
-            // document.querySelector("#exampleModalForEdit #lastnameEdit").value = employee.lastName;
-            // document.querySelector("#exampleModalForEdit #emailEdit").value = employee.email;
-            // document.querySelector("#exampleModalForEdit #numberEdit").value = employee.phone;
+            document.querySelector("#exampleModalForEdit #salutationEdit").value = employee.salutation;
+            document.querySelector("#exampleModalForEdit #firstnameEdit").value = employee.firstName;
+            document.querySelector("#exampleModalForEdit #lastnameEdit").value = employee.lastName;
+            document.querySelector("#exampleModalForEdit #emailEdit").value = employee.email;
+            document.querySelector("#exampleModalForEdit #numberEdit").value = employee.phone;
 
             // Convert DOB from dd-mm-yyyy to yyyy-mm-dd
-            // const [day, month, year] = employee.dob.split("-");
-            // document.querySelector("#exampleModalForEdit #dobEdit").value = `${year}-${month}-${day}`;
+            const [day, month, year] = employee.dob.split("-");
+            document.querySelector("#exampleModalForEdit #dobEdit").value = `${year}-${month}-${day}`;
 
-            // document.querySelector("#exampleModalForEdit #qualificationsEdit").value = employee.qualifications;
-            // document.querySelector("#exampleModalForEdit #addressEdit").value = employee.address;
-            // document.querySelector("#exampleModalForEdit #cityEdit").value = employee.city;
-            // document.querySelector("#exampleModalForEdit #stateEdit").value = employee.state;
-            // document.querySelector("#exampleModalForEdit #countryEdit").value = employee.country;
-            // document.querySelector("#exampleModalForEdit #pinEdit").value = employee.pin;
+            document.querySelector("#exampleModalForEdit #qualificationsEdit").value = employee.qualifications;
+            document.querySelector("#exampleModalForEdit #addressEdit").value = employee.address;
+            document.querySelector("#exampleModalForEdit #cityEdit").value = employee.city;
+            document.querySelector("#exampleModalForEdit #stateEdit").value = employee.state;
+            document.querySelector("#exampleModalForEdit #countryEdit").value = employee.country;
+            document.querySelector("#exampleModalForEdit #pinEdit").value = employee.pin;
 
-            // if (employee.gender === "Male") {
-            //     document.querySelector("#exampleModalForEdit #radio1Edit").checked = true;
-            // } else {
-            //     document.querySelector("#exampleModalForEdit #radio2Edit").checked = true;
-            // }
+            if (employee.gender === "Male") {
+                document.querySelector("#exampleModalForEdit #radio1Edit").checked = true;
+            } else {
+                document.querySelector("#exampleModalForEdit #radio2Edit").checked = true;
+            }
 
             // Store ID for updating later
-            // document.getElementById("exampleModalForEdit").dataset.id = employeeId;
+            document.getElementById("exampleModalForEdit").dataset.id = employeeId;
 
             // Open modal
-//             const modal = new bootstrap.Modal(
-//                 document.getElementById("exampleModalForEdit")
-//             );
+            const modal = new bootstrap.Modal(
+                document.getElementById("exampleModalForEdit")
+            );
 
-//             modal.show();
+            modal.show();
 
-//         } catch (error) {
-//             console.error("Error loading employee for edit:", error);
-//         }
-//     }
-// });
+        } catch (error) {
+            console.error("Error loading employee for edit:", error);
+        }
+    }
+});
+
+
+
+
+
+
+
+// Chatgpt - To inject values into the edit modal fields
+document.getElementById("update-employee-btn")
+.addEventListener("click", async function () {
+
+    const modal = document.getElementById("exampleModalForEdit");
+    const employeeId = modal.dataset.id;
+
+    if (!employeeId) {
+        alert("Employee ID missing");
+        return;
+    }
+
+    const dobValue = document.getElementById("dobEdit").value;
+
+    if (!dobValue) {
+        alert("Please select Date of Birth");
+        return;
+    }
+
+    const dateObj = new Date(dobValue);
+
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const year = dateObj.getFullYear();
+
+    const formattedDob = `${day}-${month}-${year}`;
+
+    const selectedGender = document.querySelector('#exampleModalForEdit input[name="genderEdit"]:checked');
+
+    if (!selectedGender) {
+        alert("Please select gender");
+        return;
+    }
+
+    const updatedData = {
+        salutation: document.getElementById("salutationEdit").value,
+        firstName: document.getElementById("firstnameEdit").value,
+        lastName: document.getElementById("lastnameEdit").value,
+        email: document.getElementById("emailEdit").value,
+        phone: document.getElementById("numberEdit").value,
+        dob: formattedDob,
+        gender: selectedGender.value,
+        qualifications: document.getElementById("qualificationsEdit").value,
+        address: document.getElementById("addressEdit").value,
+        city: document.getElementById("cityEdit").value,
+        state: document.getElementById("stateEdit").value,
+        country: document.getElementById("countryEdit").value,
+        pin: document.getElementById("pinEdit").value
+    };
+
+    try {
+        const response = await fetch(
+            `http://localhost:3000/employees/${employeeId}`,
+            {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(updatedData)
+            }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            console.log("Update Error:", data);
+            throw new Error("Update failed");
+        }
+
+        alert("Employee Updated Successfully");
+
+        const modalInstance = bootstrap.Modal.getInstance(modal);
+        modalInstance.hide();
+
+        getEmployees(); // refresh table
+
+    } catch (error) {
+        console.error("Update Error:", error);
+    }
+});
+
 
 
 getEmployees();
