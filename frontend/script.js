@@ -262,8 +262,11 @@ document.getElementById('adding-employee-btn').addEventListener("click", () => {
         state: document.getElementById('state').value,
         country: document.getElementById('country').value,
         pin: document.getElementById('pin').value,
-        username: "user",
-        password: "default123"
+        username: document.getElementById('username').value,
+        password: document.getElementById('password').value,
+
+        // username: "user",
+        // password: "default123"
     };
 
     // fetch("http://localhost:3000/employees", {
@@ -506,6 +509,8 @@ document.addEventListener("click", async function (e) {
             document.querySelector("#exampleModalForEdit #stateEdit").value = employee.state;
             document.querySelector("#exampleModalForEdit #countryEdit").value = employee.country;
             document.querySelector("#exampleModalForEdit #pinEdit").value = employee.pin;
+            document.querySelector("#exampleModalForEdit #usernameEdit").value = employee.username;
+            document.querySelector("#exampleModalForEdit #passwordEdit").value = employee.password;
 
             if (employee.gender === "Male") {
                 document.querySelector("#exampleModalForEdit #radio1Edit").checked = true;
@@ -582,7 +587,9 @@ document.getElementById("update-employee-btn")
         city: document.getElementById("cityEdit").value,
         state: document.getElementById("stateEdit").value,
         country: document.getElementById("countryEdit").value,
-        pin: document.getElementById("pinEdit").value
+        pin: document.getElementById("pinEdit").value,
+        username: document.getElementById("usernameEdit").value,
+        password: document.getElementById("passwordEdit").value
     };
 
     try {
@@ -612,6 +619,47 @@ document.getElementById("update-employee-btn")
     } catch (error) {
         console.error("Update Error:", error);
     }
+});
+
+
+
+
+
+
+
+// chagpt - to delete employee
+document.addEventListener("click", async function (e) {
+
+    if (e.target.classList.contains("delete-btn")) {
+        e.preventDefault();
+
+        const employeeId = e.target.dataset.id;
+
+        const confirmDelete = confirm("Are you sure you want to delete this employee?");
+
+        if (!confirmDelete) return;
+
+        try {
+            const response = await fetch(
+                `http://localhost:3000/employees/${employeeId}`,
+                {
+                    method: "DELETE"
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error("Failed to delete employee");
+            }
+
+            alert("Employee deleted successfully");
+
+            getEmployees(); // 🔥 Refresh table
+
+        } catch (error) {
+            console.error("Delete Error:", error);
+        }
+    }
+
 });
 
 
